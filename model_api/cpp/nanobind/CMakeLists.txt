@@ -15,14 +15,15 @@ find_package(nanobind CONFIG REQUIRED)
 file(GLOB BINDINGS_SOURCES ./*.cpp)
 file(GLOB BINDINGS_HEADERS ./*.hpp)
 
-nanobind_add_module(py_model_api NB_STATIC STABLE_ABI LTO ${BINDINGS_SOURCES} ${BINDINGS_HEADERS})
+nanobind_add_module(nanobind_model_api NB_STATIC STABLE_ABI LTO ${BINDINGS_SOURCES} ${BINDINGS_HEADERS})
 
-target_link_libraries(py_model_api PRIVATE model_api)
-
-nanobind_add_stub(
-    py_model_api_stub
-    MODULE py_model_api
-    OUTPUT py_model_api.pyi
-    PYTHON_PATH $<TARGET_FILE_DIR:py_model_api>
-    DEPENDS py_model_api
-)
+target_link_libraries(nanobind_model_api PRIVATE model_api)
+#
+#nanobind_add_stub(
+    #nanobind_model_api_stub
+    #MODULE nanobind_model_api
+    #OUTPUT nanobind_model_api.pyi
+    #PYTHON_PATH $<TARGET_FILE_DIR:nanobind_model_api>
+    #DEPENDS nanobind_model_api
+#)
+#

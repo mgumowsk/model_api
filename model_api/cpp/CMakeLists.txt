@@ -84,7 +84,8 @@ elseif(CMAKE_CXX_COMPILER_ID MATCHES "^GNU|(Apple)?Clang$")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
 endif()
 
-add_subdirectory(py_bindings)
+add_subdirectory(nanobind)
+add_subdirectory(pybind11)
 
 include(GenerateExportHeader)
 

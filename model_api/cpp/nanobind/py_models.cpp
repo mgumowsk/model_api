@@ -40,7 +40,7 @@ ov::Any py_object_to_any(const nb::object& py_obj, std::string property_name) {
 
 }  // namespace
 
-NB_MODULE(py_model_api, m) {
+NB_MODULE(nanobind_model_api, m) {
     m.doc() = "Nanobind binding for OpenVINO Vision API library";
     nb::class_<ResultBase>(m, "ResultBase").def(nb::init<>());
 
